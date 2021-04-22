@@ -8,6 +8,11 @@
 inline void start_thread(void (*function)()) {
     HANDLE thread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)function, NULL, 0, NULL);
 }
+#else
+#include <cstdlib>
+#include <cstring>
+#include <netdb.h>
+#include <unistd.h>
 #endif
 
 #define DEFAULT_PORT            5200

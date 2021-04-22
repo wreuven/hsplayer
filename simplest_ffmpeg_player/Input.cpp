@@ -62,7 +62,7 @@ fail:
 }
 
 static void WaitForAndHandleConnections() {
-	int sin_size = sizeof(struct sockaddr_in);
+	socklen_t sin_size = sizeof(struct sockaddr_in);
 	int sock;
 	int finished = 0;
 
